@@ -5,7 +5,27 @@ const UsersList = [
         username: 'thegabe101',
         age: 32,
         email: 'gabe@gmail.com',
-        nationality: 'American'
+        nationality: 'USA',
+        friends: [
+            {
+                id: 2,
+                name: 'Cassandra',
+                username: 'casstravels14',
+                age: 56,
+                email: 'cass@gmail.com',
+                nationality: 'NIGERIA',
+                friends: []
+            },
+            {
+                id: 5,
+                name: 'Casey',
+                username: 'caseyGar',
+                age: 87,
+                email: 'casey@gmail.com',
+                nationality: null,
+                friends: []
+            }
+        ]
     },
     {
         id: 2,
@@ -13,7 +33,8 @@ const UsersList = [
         username: 'casstravels14',
         age: 56,
         email: 'cass@gmail.com',
-        nationality: 'Nigerian'
+        nationality: 'NIGERIA',
+        friends: []
     },
     {
         id: 3,
@@ -21,7 +42,8 @@ const UsersList = [
         username: 'liuFlies666',
         age: 21,
         email: 'liuZhu@gmail.com',
-        nationality: 'Chinese'
+        nationality: 'CHINA',
+        friends: []
     },
     {
         id: 4,
@@ -29,7 +51,8 @@ const UsersList = [
         username: 'fs923user',
         age: 28,
         email: 'fastid@gmail.com',
-        nationality: 'Jordanian'
+        nationality: 'JORDAN',
+        friends: []
     },
     {
         id: 5,
@@ -37,9 +60,49 @@ const UsersList = [
         username: 'caseyGar',
         age: 87,
         email: 'casey@gmail.com',
-        nationality: 'Canadian'
+        nationality: null,
+        friends: []
     }
 
 ];
+
+
+const filmsList = [
+    {
+        id: 1,
+        title: 'Jurassic Park',
+        year: 1993,
+        director: 'Steven Spielberg',
+        ratedR: false
+    },
+    {
+        id: 2,
+        title: 'Pan\'s Labryrinth',
+        year: 2006,
+        director: 'Guillermo del Toro',
+        ratedR: true
+    },
+    {
+        id: 3,
+        title: 'Toy Story',
+        year: 1995,
+        director: 'John Lasseter',
+        ratedR: false
+    },
+    {
+        id: 4,
+        title: 'Requiem for a Dream',
+        year: 200,
+        director: 'Darren Aronofsky',
+        ratedR: true
+    },
+    {
+        id: 5,
+        title: 'The Menu',
+        year: 2022,
+        director: 'Mark Mylod',
+        ratedR: true
+    },
+]
 
 module.exports = { UsersList }
