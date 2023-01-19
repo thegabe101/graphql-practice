@@ -1,0 +1,84 @@
+// These queries were used in GraphQL playground targeting https://countries.trevorblades.com.
+
+//define inputs if you're trying to grab specific parameters back rather than placing them all within the specified query
+
+input UserInput {
+    id: ID
+    name: string
+  }
+  
+  type Query {
+    users: [User]
+    user(input: UserInput): User
+  }
+  
+  ----------------------------
+
+  //open and close curly braces serve to establish a GraphQL query. 
+
+//Example query below would return data:
+//will always return an object
+//first field will always be data, followed by the data you queried
+
+
+{
+  "data": {
+    "country": {
+      "code": "BR",
+      "phone": "55",
+      "capital": "Brasília",
+      "name": "Brazil"
+    }
+  }
+}
+
+//returned by query: 
+
+{
+  country(code: "BR") {
+    code
+    phone
+    capital
+    name
+  }
+}
+
+-----------------------------
+
+//note that in country type Country, Continent is not a basic field.
+
+type Country {
+  code: ID!
+  name: String!
+  native: String!
+  phone: String!
+  continent: Continent!
+  capital: String
+  currency: String
+  languages: [Language!]!
+  emoji: String!
+  emojiU: String!
+  states: [State!]!
+}
+
+//thus, to query, you can't simply designate continent. You need to specify what children data you want to fetch, including children of children.
+//The query would look like this: 
+
+{
+  country(code: "BR") {
+    code
+    phone
+    capital
+    name
+    continent {
+      code
+      name
+      countries {
+        name
+        code
+      }
+    }
+  }
+}
+
+//notice how in GraphQL we are only downloading the data that we need by specifying what we WANT to get, rather than fetching entire objects that nest other objects we don't need. 
