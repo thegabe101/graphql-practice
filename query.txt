@@ -467,3 +467,27 @@ returning:
         "native": "Македонски",
         "rtl": false
       }
+
+      //note that to query a single language from this layer, you would need to include a code:
+
+      {
+  language(code: "en") {
+    code
+    name
+    native
+    rtl
+  }
+}
+
+//this is because you can see it demanded in the query substructure
+
+type Query {
+  _entities(representations: [_Any!]!): [_Entity]!
+  _service: _Service!
+  countries(filter: CountryFilterInput): [Country!]!
+  country(code: ID!): Country
+  continents(filter: ContinentFilterInput): [Continent!]!
+  continent(code: ID!): Continent
+  languages(filter: LanguageFilterInput): [Language!]!
+  language(code: ID!): Language
+}
