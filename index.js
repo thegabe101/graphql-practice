@@ -1,12 +1,7 @@
 //entrypoint for the API here
 const { ApolloServer } = require('apollo-server');
-
-
-
-
-
-
-
+const { typeDefs } = require('./schema/type-defs');
+const { resolvers } = require('./schema/resolvers');
 
 
 
