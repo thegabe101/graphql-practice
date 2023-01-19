@@ -1,5 +1,5 @@
 //here we write all of the resolvers that make calls to our API
-const { UsersList } = require('../data.js');
+const { UsersList, FilmsList } = require('../data.js');
 const _ = require('lodash');
 //parent gives us a value that was resolved in the chain of ql types 
 //to skip it, we can pass ___ to get to next value (args)
@@ -15,6 +15,14 @@ const resolvers = {
             const user = _.find(UsersList, { id: Number(id) });
             return user;
         },
+        films() {
+            return FilmsList;
+        },
+        film(parent, args) {
+            const title = args.title;
+            const film = _.find(FilmsList, { title: String(title) });
+            return film;
+        }
     },
 };
 

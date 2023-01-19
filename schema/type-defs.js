@@ -37,6 +37,8 @@ const typeDefs = gql`
     type Query {
         users: [User!]!
         user(id:ID!): User!
+        films: [Film!]!
+        film(title:String!): Film!
     }
 
 `;

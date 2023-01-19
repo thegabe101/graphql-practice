@@ -67,7 +67,7 @@ const UsersList = [
 ];
 
 
-const filmsList = [
+const FilmsList = [
     {
         id: 1,
         title: 'Jurassic Park',
@@ -105,4 +105,4 @@ const filmsList = [
     },
 ]
 
-module.exports = { UsersList }
+module.exports = { UsersList, FilmsList }
