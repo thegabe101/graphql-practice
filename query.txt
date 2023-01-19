@@ -82,3 +82,388 @@ type Country {
 }
 
 //notice how in GraphQL we are only downloading the data that we need by specifying what we WANT to get, rather than fetching entire objects that nest other objects we don't need. 
+
+//note that you do not need to pass an argument unless it is required in the query type
+
+//note that you can specify what you want to receive from each query, such as in this example: 
+
+{
+  languages {
+    code
+    name
+    native
+    rtl
+  }
+}
+
+returning:
+
+{
+  "data": {
+    "languages": [
+      {
+        "code": "af",
+        "name": "Afrikaans",
+        "native": "Afrikaans",
+        "rtl": false
+      },
+      {
+        "code": "am",
+        "name": "Amharic",
+        "native": "አማርኛ",
+        "rtl": false
+      },
+      {
+        "code": "ar",
+        "name": "Arabic",
+        "native": "العربية",
+        "rtl": true
+      },
+      {
+        "code": "ay",
+        "name": "Aymara",
+        "native": "Aymar",
+        "rtl": false
+      },
+      {
+        "code": "az",
+        "name": "Azerbaijani",
+        "native": "Azərbaycanca / آذربايجان",
+        "rtl": false
+      },
+      {
+        "code": "be",
+        "name": "Belarusian",
+        "native": "Беларуская",
+        "rtl": false
+      },
+      {
+        "code": "bg",
+        "name": "Bulgarian",
+        "native": "Български",
+        "rtl": false
+      },
+      {
+        "code": "bi",
+        "name": "Bislama",
+        "native": "Bislama",
+        "rtl": false
+      },
+      {
+        "code": "bn",
+        "name": "Bengali",
+        "native": "বাংলা",
+        "rtl": false
+      },
+      {
+        "code": "bs",
+        "name": "Bosnian",
+        "native": "Bosanski",
+        "rtl": false
+      },
+      {
+        "code": "ca",
+        "name": "Catalan",
+        "native": "Català",
+        "rtl": false
+      },
+      {
+        "code": "ch",
+        "name": "Chamorro",
+        "native": "Chamoru",
+        "rtl": false
+      },
+      {
+        "code": "cs",
+        "name": "Czech",
+        "native": "Česky",
+        "rtl": false
+      },
+      {
+        "code": "da",
+        "name": "Danish",
+        "native": "Dansk",
+        "rtl": false
+      },
+      {
+        "code": "de",
+        "name": "German",
+        "native": "Deutsch",
+        "rtl": false
+      },
+      {
+        "code": "dv",
+        "name": "Divehi",
+        "native": "ދިވެހިބަސް",
+        "rtl": true
+      },
+      {
+        "code": "dz",
+        "name": "Dzongkha",
+        "native": "ཇོང་ཁ",
+        "rtl": false
+      },
+      {
+        "code": "el",
+        "name": "Greek",
+        "native": "Ελληνικά",
+        "rtl": false
+      },
+      {
+        "code": "en",
+        "name": "English",
+        "native": "English",
+        "rtl": false
+      },
+      {
+        "code": "es",
+        "name": "Spanish",
+        "native": "Español",
+        "rtl": false
+      },
+      {
+        "code": "et",
+        "name": "Estonian",
+        "native": "Eesti",
+        "rtl": false
+      },
+      {
+        "code": "eu",
+        "name": "Basque",
+        "native": "Euskara",
+        "rtl": false
+      },
+      {
+        "code": "fa",
+        "name": "Persian",
+        "native": "فارسی",
+        "rtl": true
+      },
+      {
+        "code": "ff",
+        "name": "Peul",
+        "native": "Fulfulde",
+        "rtl": false
+      },
+      {
+        "code": "fi",
+        "name": "Finnish",
+        "native": "Suomi",
+        "rtl": false
+      },
+      {
+        "code": "fj",
+        "name": "Fijian",
+        "native": "Na Vosa Vakaviti",
+        "rtl": false
+      },
+      {
+        "code": "fo",
+        "name": "Faroese",
+        "native": "Føroyskt",
+        "rtl": false
+      },
+      {
+        "code": "fr",
+        "name": "French",
+        "native": "Français",
+        "rtl": false
+      },
+      {
+        "code": "ga",
+        "name": "Irish",
+        "native": "Gaeilge",
+        "rtl": false
+      },
+      {
+        "code": "gl",
+        "name": "Galician",
+        "native": "Galego",
+        "rtl": false
+      },
+      {
+        "code": "gn",
+        "name": "Guarani",
+        "native": "Avañe'ẽ",
+        "rtl": false
+      },
+      {
+        "code": "gv",
+        "name": "Manx",
+        "native": "Gaelg",
+        "rtl": false
+      },
+      {
+        "code": "he",
+        "name": "Hebrew",
+        "native": "עברית",
+        "rtl": true
+      },
+      {
+        "code": "hi",
+        "name": "Hindi",
+        "native": "हिन्दी",
+        "rtl": false
+      },
+      {
+        "code": "hr",
+        "name": "Croatian",
+        "native": "Hrvatski",
+        "rtl": false
+      },
+      {
+        "code": "ht",
+        "name": "Haitian",
+        "native": "Krèyol ayisyen",
+        "rtl": false
+      },
+      {
+        "code": "hu",
+        "name": "Hungarian",
+        "native": "Magyar",
+        "rtl": false
+      },
+      {
+        "code": "hy",
+        "name": "Armenian",
+        "native": "Հայերեն",
+        "rtl": false
+      },
+      {
+        "code": "id",
+        "name": "Indonesian",
+        "native": "Bahasa Indonesia",
+        "rtl": false
+      },
+      {
+        "code": "is",
+        "name": "Icelandic",
+        "native": "Íslenska",
+        "rtl": false
+      },
+      {
+        "code": "it",
+        "name": "Italian",
+        "native": "Italiano",
+        "rtl": false
+      },
+      {
+        "code": "ja",
+        "name": "Japanese",
+        "native": "日本語",
+        "rtl": false
+      },
+      {
+        "code": "ka",
+        "name": "Georgian",
+        "native": "ქართული",
+        "rtl": false
+      },
+      {
+        "code": "kg",
+        "name": "Kongo",
+        "native": "KiKongo",
+        "rtl": false
+      },
+      {
+        "code": "kk",
+        "name": "Kazakh",
+        "native": "Қазақша",
+        "rtl": false
+      },
+      {
+        "code": "kl",
+        "name": "Greenlandic",
+        "native": "Kalaallisut",
+        "rtl": false
+      },
+      {
+        "code": "km",
+        "name": "Cambodian",
+        "native": "ភាសាខ្មែរ",
+        "rtl": false
+      },
+      {
+        "code": "ko",
+        "name": "Korean",
+        "native": "한국어",
+        "rtl": false
+      },
+      {
+        "code": "ku",
+        "name": "Kurdish",
+        "native": "Kurdî / كوردی",
+        "rtl": true
+      },
+      {
+        "code": "ky",
+        "name": "Kirghiz",
+        "native": "Kırgızca / Кыргызча",
+        "rtl": false
+      },
+      {
+        "code": "la",
+        "name": "Latin",
+        "native": "Latina",
+        "rtl": false
+      },
+      {
+        "code": "lb",
+        "name": "Luxembourgish",
+        "native": "Lëtzebuergesch",
+        "rtl": false
+      },
+      {
+        "code": "ln",
+        "name": "Lingala",
+        "native": "Lingála",
+        "rtl": false
+      },
+      {
+        "code": "lo",
+        "name": "Laotian",
+        "native": "ລາວ / Pha xa lao",
+        "rtl": false
+      },
+      {
+        "code": "lt",
+        "name": "Lithuanian",
+        "native": "Lietuvių",
+        "rtl": false
+      },
+      {
+        "code": "lu",
+        "name": "Luba-Katanga",
+        "native": "Tshiluba",
+        "rtl": false
+      },
+      {
+        "code": "lv",
+        "name": "Latvian",
+        "native": "Latviešu",
+        "rtl": false
+      },
+      {
+        "code": "mg",
+        "name": "Malagasy",
+        "native": "Malagasy",
+        "rtl": false
+      },
+      {
+        "code": "mh",
+        "name": "Marshallese",
+        "native": "Kajin Majel / Ebon",
+        "rtl": false
+      },
+      {
+        "code": "mi",
+        "name": "Maori",
+        "native": "Māori",
+        "rtl": false
+      },
+      {
+        "code": "mk",
+        "name": "Macedonian",
+        "native": "Македонски",
+        "rtl": false
+      }
