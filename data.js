@@ -92,7 +92,7 @@ const FilmsList = [
     {
         id: 4,
         title: 'Requiem for a Dream',
-        year: 200,
+        year: 2000,
         director: 'Darren Aronofsky',
         ratedR: true
     },

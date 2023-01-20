@@ -24,6 +24,13 @@ const resolvers = {
             return film;
         }
     },
+    User: {
+        favoriteFilms() {
+            return _.filter(
+                FilmsList, (film) => film.year >= 2000
+            )
+        }
+    }
 };
 
 module.exports = { resolvers }

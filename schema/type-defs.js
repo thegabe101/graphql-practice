@@ -7,6 +7,9 @@ const { gql } = require('apollo-server');
 //important to remember that diff from SQL graphql has a basic type called ID 
 //query type is the "first level" of the graph
 //enums super useful to prevent failures of non spac parameters sneaking in
+
+//notice that in mutations the logic comes in the resolver; the return for the mutation is just the updated value - can also use an input, which ill do here
+//dont need to pass an id in an input; do notice you can pass a default value
 const typeDefs = gql`
 
     enum Nationality {
@@ -21,9 +24,10 @@ const typeDefs = gql`
         name: String!
         username: String!
         email: String!
-        age: Int!
+        age: Int
         nationality: Nationality
         friends: [User]
+        favoriteFilms: [Film]
     }
 
     type Film {
@@ -39,6 +43,26 @@ const typeDefs = gql`
         user(id:ID!): User!
         films: [Film!]!
         film(title:String!): Film!
+    }
+
+    input CreateUserInput {
+        name: String!
+        username: String!
+        email: String!
+        age: Int = 18
+        nationality: Nationality = USA
+    }
+
+    input CreateFilmInput {
+        title: String!
+        year: Int!
+        director: String
+        ratedR: Boolean!
+    }
+
+    type Mutation {
+        createUser(input: CreateUserInput): User!
+        createFilm(input: CreateFilmInput): Film! 
     }
 
 `;
