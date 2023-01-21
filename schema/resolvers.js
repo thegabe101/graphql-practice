@@ -52,6 +52,11 @@ const resolvers = {
             });
             return newUser;
         },
+        deleteUser(parent, args) {
+            const userId = args.id;
+            _.remove(UsersList, (user) => user.id === Number(userId));
+            return null;
+        }
     },
 };
 
