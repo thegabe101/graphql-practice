@@ -14,8 +14,20 @@ const QUERY_ALL_USERS = gql`
     }
 `
 
+const QUERY_ALL_FILMS = gql`
+        query getAllFilms {
+    films {
+    title
+    year
+    director
+    ratedR
+  }
+}
+`
+
 export const DisplayData = () => {
     const { data, error, loading } = useQuery(QUERY_ALL_USERS);
+    const { data: filmData } = useQuery(QUERY_ALL_FILMS);
 
     if (loading) {
         <h1>{loading}</h1>
@@ -30,6 +42,10 @@ export const DisplayData = () => {
     }
 
     return (
-        <div>{data && data.users.map((e) => { return <div><h1>Name: {e.name} Username: {e.username} Email: {e.email} Age: {e.age} Nationality: {e.nationality}</h1></div> })}</div>
+        <div>{data && data.users.map((e) => { return <div><h1>Name: {e.name} Username: {e.username} Email: {e.email} Age: {e.age} Nationality: {e.nationality} </h1></div> })}
+            <div>
+                {/* <h2>{filmData && filmData.films</h2> */}
+            </div>
+        </div>
     )
 }
