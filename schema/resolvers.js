@@ -30,7 +30,29 @@ const resolvers = {
                 FilmsList, (film) => film.year >= 2000
             )
         }
-    }
+    },
+    Mutation: {
+        createUser(parent, args) {
+            const user = args.input;
+            const lastId = UsersList[UsersList.length - 1].id;
+            user.id = lastId + 1;
+            UsersList.push(user);
+            console.log(user);
+            return user;
+        },
+        updateUsername(parent, args) {
+            let newUser;
+            const userId = args.input.id;
+            const newUsername = args.input.newUsername;
+            UsersList.forEach((user) => {
+                if (user.id = userId) {
+                    user.username = newUsername;
+                    newUser = user
+                };
+            });
+            return newUser;
+        },
+    },
 };
 
 module.exports = { resolvers }

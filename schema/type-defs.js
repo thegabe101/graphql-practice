@@ -49,7 +49,7 @@ const typeDefs = gql`
         name: String!
         username: String!
         email: String!
-        age: Int = 18
+        age: Int!
         nationality: Nationality = USA
     }
 
@@ -60,9 +60,15 @@ const typeDefs = gql`
         ratedR: Boolean!
     }
 
+    input UpdateUsernameInput {
+        id: ID!
+        newUsername: String!
+    }
+
     type Mutation {
-        createUser(input: CreateUserInput): User!
-        createFilm(input: CreateFilmInput): Film! 
+        createUser(input: CreateUserInput!): User
+        updateUsername(input: UpdateUsernameInput!): User
+        createFilm(input: CreateFilmInput!): Film 
     }
 
 `;
