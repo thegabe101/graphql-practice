@@ -35,16 +35,18 @@ export const DisplayData = () => {
 
     if (data) {
         console.log(data);
+        console.log(filmData);
     }
 
     if (error) {
         <h1>Sorry, an error occurred. Please refresh and try again.</h1>
     }
 
+
     return (
         <div>{data && data.users.map((e) => { return <div><h1>Name: {e.name} Username: {e.username} Email: {e.email} Age: {e.age} Nationality: {e.nationality} </h1></div> })}
             <div>
-                {/* <h2>{filmData && filmData.films</h2> */}
+                <h2>{filmData && filmData.films.map((e) => { return <div>Title: {e.title} Year: {e.year} Director: {e.director} Rated R? {e.ratedR === true ? <h2>This film is rated R.</h2> : <h2>For all audiences.</h2>} </div> })}</h2>
             </div>
         </div>
     )
